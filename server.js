@@ -50,7 +50,10 @@ function filterByQuery(query, animalsArray){
     // give's the results back to app.get's function.
     return filteredResults;
 }
-
+function findById(id, animalsArray) {
+    const result = animalsArray.filter(animal => animal.id === id)[0];
+    return result;
+}
 // sets where the api is located, and makes a function with the params req an res.
 app.get('/api/animals', (req, res) => {
     // results is the animal data from the animals.json file.
@@ -62,6 +65,16 @@ app.get('/api/animals', (req, res) => {
     }
     // NOT SURE, GOTTA GO BACK AND READ
     res.json(results);
+});
+
+app.get('/api/animals/:id', (req, res) => {
+    const result = findById(req.params.id, animals);
+
+    if(result){
+        res.json(result);
+    } else {
+        res.sendStatus(404);
+    }
 });
 
 // makes the app listen for anything on port 3001
