@@ -128,6 +128,10 @@ app.post('/api/animals', (req, res) => {
     }
 });
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/index.html'));
+});
+
 // makes the app listen for anything on port 3001
 app.listen(PORT, () => {
     // tells us the app is on server port 3001
