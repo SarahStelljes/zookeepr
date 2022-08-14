@@ -137,6 +137,16 @@
         "loving"
       ],
       "id": "13"
+    },
+    {
+      "name": "Orion",
+      "species": "Noble Dragon Horse (Mythical Beast)",
+      "diet": "omnivore",
+      "personalityTraits": [
+        "hungry",
+        "loving"
+      ],
+      "id": "14"
     }
   ]
 }
